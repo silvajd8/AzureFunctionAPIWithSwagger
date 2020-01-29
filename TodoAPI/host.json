@@ -1,0 +1,17 @@
+{
+  "version": "2.0",
+  "extensions": {
+    
+    "Swashbuckle": {
+      "Documents": [
+        {
+          "Title": "TODO API",
+          "Version": "v1",
+          "Description": "Azure Functions Todo API",
+          "InfoURL":  null
+        }
+      ]
+    }
+
+  }
+}

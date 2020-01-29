@@ -1,0 +1,12 @@
+﻿using System;
+
+namespace TodoAPI
+{
+    public class Todo
+    {
+        public int Id { get; set; }
+        public string Description { get; set; }
+        public DateTime RegistrationTime { get; set; }
+        public bool HasDone { get; set; }
+    }
+}
