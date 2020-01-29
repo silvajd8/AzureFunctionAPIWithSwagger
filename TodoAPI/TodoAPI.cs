@@ -20,7 +20,7 @@ namespace TodoAPI
         [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(Todo[]))]
         [FunctionName("List")]
         public static IActionResult Get(
-            [HttpTrigger(AuthorizationLevel.Function, "get", Route = "todo")] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "todo")] HttpRequest req,
             ILogger log)
         {
             log.LogInformation("GET TODO LIST");
@@ -31,7 +31,7 @@ namespace TodoAPI
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         [FunctionName("Get")]
         public static IActionResult GetById(
-            [HttpTrigger(AuthorizationLevel.Function, "get", Route = "todo/{id}")] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "todo/{id}")] HttpRequest req,
             ILogger log,
             int id)
         {
@@ -53,7 +53,7 @@ namespace TodoAPI
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         [FunctionName("Post")]
         public static IActionResult Post(
-            [HttpTrigger(AuthorizationLevel.Function, "post", Route = "todo")]
+            [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "todo")]
             [RequestBodyType(typeof(Todo), "product request")] HttpRequest req,
             ILogger log)
         {
@@ -80,7 +80,7 @@ namespace TodoAPI
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         [FunctionName("Put")]
         public static IActionResult Do(
-            [HttpTrigger(AuthorizationLevel.Function, "put", Route = "todo/{id}")]
+            [HttpTrigger(AuthorizationLevel.Anonymous, "put", Route = "todo/{id}")]
             [RequestBodyType(typeof(Todo), "product request")] HttpRequest req,
             ILogger log,
             int id)
@@ -109,7 +109,7 @@ namespace TodoAPI
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         [FunctionName("Delete")]
         public static IActionResult Delete(
-            [HttpTrigger(AuthorizationLevel.Function, "delete", Route = "todo/{id}")] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Anonymous, "delete", Route = "todo/{id}")] HttpRequest req,
             ILogger log,
             int id)
         {
